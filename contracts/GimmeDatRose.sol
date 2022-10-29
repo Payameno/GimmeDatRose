@@ -20,4 +20,8 @@ contract GimmeDatRose {
     string name;
     string message;
   }
+
+  //Address of contract deployer
+  address payable owner;
+  
 }
