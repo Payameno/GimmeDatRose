@@ -4,6 +4,28 @@
 // You can also run a script with `npx hardhat run <script>`. If you do that, Hardhat
 // will compile your contracts, add the Hardhat Runtime Environment's members to the
 // global scope, and execute the script.
+
+/**
+ * @dev helper Functions
+ */
+//Returns the Ether balance of a given address - waffle.provider is a node that connect to blockchain, even test environment
+async function getBalance(address) {
+  const balanceBigInt = await hre.waffle.provider.getBalance(address);
+  //we take the balance in bigInt and using utils within ethers package, we transform it into a readable format
+  return hre.ethers.utils.formatEther(balanceBigInt);
+}
+
+
+//
+
+
+
+
+
+
+
+
+
 const hre = require("hardhat");
 
 async function main() {
