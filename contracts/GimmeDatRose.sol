@@ -50,6 +50,24 @@ contract GimmeDatRose {
       _message
     ));
 
+  //Emit a log event when memo is created
+    emit NewMemo(msg.sender, block.timestamp, _name, _message);
+
+   }
+
+  /**
+  * @dev Send the entire balance stored in this contract to the owner
+   */
+   function withdrawRoses() public {
+    require(owner.send(address(this).balance));
+
+   }
+
+     /**
+  * @dev Retrieved all memos received & stored on the blockchain
+   */
+   function getMemos() public view return(Memo[] memory) {
+      return memos;
    }
 
 }
