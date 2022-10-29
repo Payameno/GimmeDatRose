@@ -21,7 +21,15 @@ contract GimmeDatRose {
     string message;
   }
 
+  //List of all memos received from lovers!
+  Memo[] memos;
+
   //Address of contract deployer
   address payable owner;
-  
+
+  //Deploy Logic
+  constructor() {
+    owner = payable(msg.sender);
+  }
+
 }
