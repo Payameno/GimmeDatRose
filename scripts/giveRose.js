@@ -68,6 +68,9 @@ async function main() {
   await printBalances(addresses)
 
   //Read all the memos left for the owner
+  console.log("== Memos ==");
+  const memos = await gimmeDatRose.getMemos();
+  printMemos(memos);
 
 }
 
