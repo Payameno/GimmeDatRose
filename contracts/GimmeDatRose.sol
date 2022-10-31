@@ -66,7 +66,7 @@ contract GimmeDatRose {
      /**
   * @dev Retrieved all memos received & stored on the blockchain
    */
-   function getMemos() public view return(Memo[] memory) {
+   function getMemos() public view returns(Memo[] memory) {
       return memos;
    }
 
