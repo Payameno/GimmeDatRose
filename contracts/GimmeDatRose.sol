@@ -1,6 +1,8 @@
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.9;
 
+//Deployed to Goerly at 0xe8054e8CFB7257909CE2A76EE78E230266AaF50c
+
 import 'hardhat/console.sol';
 
 contract GimmeDatRose {
