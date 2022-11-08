@@ -31,7 +31,6 @@ async function printMemos(memos) {
   }
 }
 
-
 async function main() {
 
   //Get example accounts
@@ -44,19 +43,19 @@ async function main() {
   await gimmeDatRose.deployed();
   console.log('GimmeDatRose deployed to ', gimmeDatRose.address);
 
-  //Check balances before the rose purchase
+  //Check balances before the bouquet purchase
   const addresses = [owner.address, gifter.address, gimmeDatRose.address];
   console.log('== start ==');
   await printBalances(addresses)
 
   //Buy the ownwer a rose
-  const rose = {value: hre.ethers.utils.parseEther("1")};
-  await gimmeDatRose.connect(gifter).giveRose("Carolina", "You're the best!", rose);
-  await gimmeDatRose.connect(gifter2).giveRose("Vitto", "Amazing friend", rose);
-  await gimmeDatRose.connect(gifter3).giveRose("Kay", "This is from your family", rose);
+  const bouquet = {value: hre.ethers.utils.parseEther("6")};
+  await gimmeDatRose.connect(gifter).giveBouquet("Carolina", "You're the best!", bouquet);
+  await gimmeDatRose.connect(gifter2).giveBouquet("Vitto", "Amazing friend", bouquet);
+  await gimmeDatRose.connect(gifter3).giveBouquet("Kay", "This is from your family", bouquet);
 
   //Check balances after coffe purchase
-  console.log('== Rose Given ==');
+  console.log('== Bouquet Given ==');
   await printBalances(addresses)
 
   //Withdraw funds

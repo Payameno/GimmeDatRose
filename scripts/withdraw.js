@@ -21,17 +21,17 @@ async function main() {
   const signer = new hre.ethers.Wallet(process.env.PRIVATE_KEY, provider);
 
   // Instantiate connected contract.
-  const buyMeACoffee = new hre.ethers.Contract(contractAddress, contractABI, signer);
+  const gimmeDatRose = new hre.ethers.Contract(contractAddress, contractABI, signer);
 
   // Check starting balances.
   console.log("current balance of owner: ", await getBalance(provider, signer.address), "ETH");
-  const contractBalance = await getBalance(provider, buyMeACoffee.address);
-  console.log("current balance of contract: ", await getBalance(provider, buyMeACoffee.address), "ETH");
+  const contractBalance = await getBalance(provider, gimmeDatRose.address);
+  console.log("current balance of contract: ", await getBalance(provider, gimmeDatRose.address), "ETH");
 
   // Withdraw funds if there are funds to withdraw.
   if (contractBalance !== "0.0") {
     console.log("withdrawing funds..")
-    const withdrawTxn = await buyMeACoffee.withdrawTips();
+    const withdrawTxn = await gimmeDatRose.withdrawRoses();
     await withdrawTxn.wait();
   } else {
     console.log("no funds to withdraw!");
